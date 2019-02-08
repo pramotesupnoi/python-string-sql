@@ -6,14 +6,11 @@
       {
         "contentName": "meta.embedded.block.sql",
         "begin":
-          "('''|\"\"\")(\\s*(-- (?:sql|SQL)|/\\*\\s*(?:sql|SQL)\\s*\\*/))",
+          "('''|\"\"\")(?=\\s*(-- (?:sql|SQL)|/\\*\\s*(?:sql|SQL)\\s*\\*/))",
         "end": "(\\1)",
         "beginCaptures": {
           "1": {
             "name": "string.quoted.multi.python"
-          },
-          "2": {
-            "name": "comment"
           }
         },
         "endCaptures": {
@@ -30,11 +27,11 @@
       {
         "contentName": "meta.embedded.inline.sql", 
         "begin":
-            "('''|\"\"\")(\\s*(?:SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH)\\b)",
+            "('''|\"\"\")(?=\\s*(?:SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH)\\b)",
         "end": "(\\1)",
         "beginCaptures": {
           "1": {
-            "name": "string.quoted.multi.comment"
+            "name": "string.quoted.multi.python"
           }
         },
         "endCaptures": {
