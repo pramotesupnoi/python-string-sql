@@ -1,0 +1,50 @@
+{
+    "name": "python-string-sql",
+    "displayName": "Python String SQL",
+    "description": "Highlight SQL in python multiline strings",
+    "version": "0.0.1",
+    "publisher": "mwibrow",
+    "icon": "docs/logo.png",
+    "engines": {
+      "vscode": "^1.19.0"
+    },
+    "galleryBanner": {
+      "color": "#dedede",
+      "theme": "light"
+    },
+    "repository": {
+      "url": "https://github.com/mwibrow/python-string-sql"
+    },
+    "bugs": {
+      "url": "https://github.com/mwibrow/python-string-sql/issues"
+    },
+    "categories": ["Programming Languages"],
+    "keywords": ["python", "sql", "python-string-sql", "html", "template"],
+    "contributes": {
+      "languages": [
+        {
+          "id": "python",
+          "aliases": [
+            "python"
+          ],
+          "extensions": [
+            ".py",
+            ".py3"
+          ]
+        }
+      ],
+      "grammars": [
+        {
+          "injectTo": [
+            "source.python"
+          ],
+          "scopeName": "inline.python-sql",
+          "path": "./syntaxes/python-inline-sql.json",
+          "embeddedLanguages": {
+            "meta.embedded.block.html": "sql"
+          }
+        }
+      ]
+    }
+  }
+  

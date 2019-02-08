@@ -1,0 +1,24 @@
+{
+    "fileTypes": ["py"],
+    "injectionSelector":
+      "L:source.python -string",
+    "patterns": [
+      {
+        "contentName": "meta.embedded.block.sql",
+        "begin":
+          "('''|\"\"\" -- sql\\s*\n)(| )",
+        "end": "('''|\"\"\")",
+        "beginCaptures": {
+          "1": {
+            "name": "string.quoted.multi.python"
+          }
+        },
+        "patterns": [
+          {
+            "include": "source.sql"
+          }
+        ]
+      }
+    ],
+    "scopeName": "inline.python-sql"
+  }
