@@ -6,11 +6,35 @@
       {
         "contentName": "meta.embedded.block.sql",
         "begin":
-          "('''|\"\"\")(\\s*(?:SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH)\\b)",
+          "('''|\"\"\")(\\s*(-- (?:sql|SQL)|/\\*\\s*(?:sql|SQL)\\s*\\*/))",
         "end": "(\\1)",
         "beginCaptures": {
           "1": {
             "name": "string.quoted.multi.python"
+          },
+          "2": {
+            "name": "comment"
+          }
+        },
+        "endCaptures": {
+            "1": {
+              "name": "string.quoted.multi.python"
+            }
+          },
+        "patterns": [
+          {
+            "include": "source.sql"
+          }
+        ]
+      },
+      {
+        "contentName": "meta.embedded.inline.sql", 
+        "begin":
+            "('''|\"\"\")(\\s*(?:SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH)\\b)",
+        "end": "(\\1)",
+        "beginCaptures": {
+          "1": {
+            "name": "string.quoted.multi.comment"
           }
         },
         "endCaptures": {
