@@ -6,13 +6,18 @@
       {
         "contentName": "meta.embedded.block.sql",
         "begin":
-          "('''|\"\"\" -- sql\\s*\n)(| )",
-        "end": "('''|\"\"\")",
+          "('''|\"\"\")(\\s*(?:SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH)\\b)",
+        "end": "(\\1)",
         "beginCaptures": {
           "1": {
             "name": "string.quoted.multi.python"
           }
         },
+        "endCaptures": {
+            "1": {
+              "name": "string.quoted.multi.python"
+            }
+          },
         "patterns": [
           {
             "include": "source.sql"
