@@ -5,8 +5,8 @@
     "patterns": [
       {
         "contentName": "meta.embedded.inline.sql", 
-        "begin": "('''|\"\"\")(?:\\s*$)?",
-        "end": "(\\1)",
+        "begin": "\\(('''|\"\"\")",
+        "end": "(\\1)\\)",
         "beginCaptures": {
           "1": {
             "name": "string.quoted.multi.python"
@@ -20,11 +20,6 @@
         "patterns": [
           {
             "include": "#sql"
-          },
-          {
-            "begin": "^",
-            "end": "$",
-            "name": "source.python"
           }
         ]
       }
