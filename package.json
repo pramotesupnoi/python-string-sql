@@ -4,7 +4,6 @@
     "description": "Highlight SQL in python multiline strings",
     "version": "0.0.1",
     "publisher": "mwibrow",
-    "icon": "docs/logo.png",
     "engines": {
       "vscode": "^1.19.0"
     },
