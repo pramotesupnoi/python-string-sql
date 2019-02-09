@@ -4,12 +4,15 @@
       "L:source.python -string",
     "patterns": [
       {
-        "contentName": "meta.embedded.inline.sql", 
-        "begin": "\\(('''|\"\"\")",
-        "end": "(\\1)\\)",
+        "contentName": "meta.embedded.block.sql",
+        "begin": "('''|\"\"\")\\s*(--\\s*(?:SQL|sql).*|/\\*\\s*(?:SQL|sql)\\s*.*\\*/)\\s*$",
+        "end": "(\\1)",
         "beginCaptures": {
           "1": {
             "name": "string.quoted.multi.python"
+          },
+          "2": {
+            "name": "comment"
           }
         },
         "endCaptures": {
@@ -22,6 +25,25 @@
             "include": "#sql"
           }
         ]
+      },
+      {
+        "contentName": "meta.embedded.inline.sql",
+        "match": "('''|'|\"\"\"|\")\\s*((?=SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH).*;)\\s*(\\1)",
+        "captures": {
+          "1": {
+            "name": "string.quoted.multi.python"
+          },
+          "2": {
+            "patterns": [
+              {
+                "include": "#sql"
+              }
+            ]
+          },
+          "3": {
+            "name": "string.quoted.multi.python"
+          }
+        }
       }
     ],
     "repository": {
