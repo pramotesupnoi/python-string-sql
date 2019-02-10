@@ -1,20 +1,20 @@
 {
     "fileTypes": ["py"],
     "injectionSelector":
-      "L:source.python -string",
+      "L:source.python",
     "patterns": [
       {
         "contentName": "meta.embedded.block.pgsql",
-        "begin": "(?:[bBrRuU]?)('''|\"\"\")\\s*(?=--\\s*(?:PGSQL|pgsql).*$|/\\*\\s*(?:PGSQL|pgsql)\\s*.*\\*/\\s*$)",
-        "end": "(\\1)",
+        "begin": "(\\(\\(\\()",
+        "end": "\\s*(\\)\\)\\))",
         "beginCaptures": {
           "1": {
-            "name": "string.quoted.multi.python"
+            "name": "punctuation.parenthesis.begin.python"
           }
         },
         "endCaptures": {
             "1": {
-              "name": "string.quoted.multi.python"
+              "name": "punctuation.parenthesis.end.python"
             }
           },
         "patterns": [
@@ -25,7 +25,7 @@
       },
       {
         "contentName": "meta.embedded.block.sql",
-        "begin": "(?:[bBrRuU]?)('''|\"\"\")\\s*(?=--\\s*(?:SQL|sql).*$|/\\*\\s*(?:SQL|sql)\\s*.*\\*/\\s*$)",
+        "begin": "(?:[bBrRuU]?)('''|\"\"\")\\s*(?=(?:(?:SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH|DROP)\\b.*$)|--\\s*sql.*$|/\\*\\s*sql\\s*.*\\*/\\s*$)",
         "end": "(\\1)",
         "beginCaptures": {
           "1": {
@@ -74,8 +74,18 @@
         ]
       },
       "pgsql": {
-        "begin": "(?=\\s*(?:(?:SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH)\\b)|--|/\\*)",
-        "end": ";",
+        "begin": "('''|\"\"\")$",
+        "end": "^\\s*(\\1)",
+        "beginCaptures": {
+          "1": {
+            "name": "string.quoted.multi.python"
+          }
+        },
+        "endCaptures": {
+            "1": {
+              "name": "string.quoted.multi.python"
+            }
+          },
         "patterns": [
           {
             "include": "source.pgsql"
