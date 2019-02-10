@@ -1,6 +1,6 @@
 # Python string SQL
 
-Syntax highlighting for SQL inside Python strings.
+Enable syntax highlighting for SQL inside Python strings.
 
 ## Installation
 
