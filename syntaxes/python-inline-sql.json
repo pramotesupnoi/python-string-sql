@@ -4,7 +4,7 @@
       "L:source.python",
     "patterns": [
       {
-        "contentName": "meta.embedded.block.pgsql",
+        "contentName": "meta.embedded.inline.sql",
         "begin": "(\\()\\s*(#\\s*sql.*)",
         "end": "\\s*(\\))",
         "beginCaptures": {
@@ -27,7 +27,7 @@
         ]
       },
       {
-        "contentName": "meta.embedded.block.sql",
+        "contentName": "meta.embedded.inline.sql",
         "begin": "(?:[bBrRuU]?)('''|\"\"\")\\s*(?=(?:(?:SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH|DROP)\\b.*$)|--\\s*sql.*$|/\\*\\s*sql\\s*.*\\*/\\s*$)",
         "end": "(\\1)",
         "beginCaptures": {

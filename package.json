@@ -40,7 +40,6 @@
           "scopeName": "inline.python-sql",
           "path": "./syntaxes/python-inline-sql.json",
           "embeddedLanguages": {
-            "meta.embedded.block.sql": "sql",
             "meta.embedded.inline.sql": "sql"
           }
         }
