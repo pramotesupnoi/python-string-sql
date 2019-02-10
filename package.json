@@ -30,16 +30,6 @@
             ".py",
             ".py3"
           ]
-        },
-        {
-          "id": "pgsql",
-          "aliases": [
-            "postgres"
-          ],
-          "extensions": [
-            ".pgsql",
-            ".sql"
-          ]
         }
       ],
       "grammars": [
@@ -51,15 +41,8 @@
           "path": "./syntaxes/python-inline-sql.json",
           "embeddedLanguages": {
             "meta.embedded.block.sql": "sql",
-            "meta.embedded.inline.sql": "sql",
-            "meta.embedded.block.pgsql": "pgsql",
-            "meta.embedded.inline.pgsql": "pgsql"
+            "meta.embedded.inline.sql": "sql"
           }
-        },
-        {
-          "language": "pgsql",
-          "scopeName": "source.pgsql",
-          "path": "./syntaxes/pgedit/pgSQL.tmLanguage"
         }
       ]
     }

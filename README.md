@@ -28,15 +28,14 @@ The resulting `.vsix` file can be installed via the VSCode GUI.
 SQL statements inside a single line of python code work as expected.
 Multiline SQL statements require an SQL comment `-- SQL`
 or `/* SQL */` as the same line as the opening triple quotes.
-The comment `-- PGSQL` (or `/* PGSQL */`) will use
-the postgres grammer definitions from [pgEidt](https://github.com/desoi/pgedit-textmate).
+Alternatively the triple quoted string can be contained within
+parentheses, with the opening parenthesis followed by a
+python comment `# sql` and a newline.
 
+Note that this extension does not highlight SQL itself, it merely
+uses whatever highlighter is associated with the `.sql` extension.
 
 ## Acknowledgements
 
 The project was adpated from [es6-string-html](https://github.com/hanjingboo/es6-string-html).
 
-This project reuses the textmate grammar file
-from [pgEdit](https://pgedit.com/) which is distributed
-under a separate license. See the license file in
-`./syntaxes/pgedit/LICENSE`.

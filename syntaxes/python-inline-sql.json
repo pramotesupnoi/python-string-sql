@@ -5,11 +5,14 @@
     "patterns": [
       {
         "contentName": "meta.embedded.block.pgsql",
-        "begin": "(\\(\\(\\()",
-        "end": "\\s*(\\)\\)\\))",
+        "begin": "(\\()\\s*(#\\s*sql.*)",
+        "end": "\\s*(\\))",
         "beginCaptures": {
           "1": {
             "name": "punctuation.parenthesis.begin.python"
+          },
+          "2": {
+            "name": "comment.python"
           }
         },
         "endCaptures": {
@@ -19,7 +22,7 @@
           },
         "patterns": [
           {
-            "include": "#pgsql"
+            "include": "#sqlblock"
           }
         ]
       },
@@ -73,7 +76,7 @@
           }
         ]
       },
-      "pgsql": {
+      "sqlblock": {
         "begin": "('''|\"\"\")$",
         "end": "^\\s*(\\1)",
         "beginCaptures": {
@@ -88,7 +91,7 @@
           },
         "patterns": [
           {
-            "include": "source.pgsql"
+            "include": "source.sql"
           }
         ]
       }
