@@ -5,14 +5,11 @@
     "patterns": [
       {
         "contentName": "meta.embedded.block.sql",
-        "begin": "('''|\"\"\")\\s*(--\\s*(?:SQL|sql).*|/\\*\\s*(?:SQL|sql)\\s*.*\\*/)\\s*$",
+        "begin": "(?:[bBrRuU]?)('''|\"\"\")\\s*(?=--\\s*(?:SQL|sql).*$|/\\*\\s*(?:SQL|sql)\\s*.*\\*/\\s*$)",
         "end": "(\\1)",
         "beginCaptures": {
           "1": {
             "name": "string.quoted.multi.python"
-          },
-          "2": {
-            "name": "comment"
           }
         },
         "endCaptures": {
@@ -48,7 +45,7 @@
     ],
     "repository": {
       "sql": {
-        "begin": "(?=\\s*(?:SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH)\\b)",
+        "begin": "(?=\\s*(?:(?:SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH)\\b)|--|/\\*)",
         "end": ";",
         "patterns": [
           {
