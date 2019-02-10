@@ -4,6 +4,26 @@
       "L:source.python -string",
     "patterns": [
       {
+        "contentName": "meta.embedded.block.pgsql",
+        "begin": "(?:[bBrRuU]?)('''|\"\"\")\\s*(?=--\\s*(?:PGSQL|pgsql).*$|/\\*\\s*(?:PGSQL|pgsql)\\s*.*\\*/\\s*$)",
+        "end": "(\\1)",
+        "beginCaptures": {
+          "1": {
+            "name": "string.quoted.multi.python"
+          }
+        },
+        "endCaptures": {
+            "1": {
+              "name": "string.quoted.multi.python"
+            }
+          },
+        "patterns": [
+          {
+            "include": "#pgsql"
+          }
+        ]
+      },
+      {
         "contentName": "meta.embedded.block.sql",
         "begin": "(?:[bBrRuU]?)('''|\"\"\")\\s*(?=--\\s*(?:SQL|sql).*$|/\\*\\s*(?:SQL|sql)\\s*.*\\*/\\s*$)",
         "end": "(\\1)",
@@ -46,10 +66,19 @@
     "repository": {
       "sql": {
         "begin": "(?=\\s*(?:(?:SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH)\\b)|--|/\\*)",
-        "end": ";",
+        "end": "(?=;)",
         "patterns": [
           {
             "include": "source.sql"
+          }
+        ]
+      },
+      "pgsql": {
+        "begin": "(?=\\s*(?:(?:SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH)\\b)|--|/\\*)",
+        "end": ";",
+        "patterns": [
+          {
+            "include": "source.pgsql"
           }
         ]
       }

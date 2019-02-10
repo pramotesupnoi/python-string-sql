@@ -2,8 +2,6 @@
 
 Syntax highlighting for SQL inside Python strings.
 
-Adpated from [es6-string-html](https://github.com/hanjingboo/es6-string-html).
-
 ## Installation
 
 As the extension is in development, installation is only
@@ -30,3 +28,15 @@ The resulting `.vsix` file can be installed via the VSCode GUI.
 SQL statements inside a single line of python code work as expected.
 Multiline SQL statements require an SQL comment `-- SQL`
 or `/* SQL */` as the same line as the opening triple quotes.
+The comment `-- PGSQL` (or `/* PGSQL */`) will use
+the postgres grammer definitions from [pgEidt](https://github.com/desoi/pgedit-textmate).
+
+
+## Acknowledgements
+
+The project was adpated from [es6-string-html](https://github.com/hanjingboo/es6-string-html).
+
+This project reuses the textmate grammar file
+from [pgEdit](https://pgedit.com/) which is distributed
+under a separate license. See the license file in
+`./syntaxes/pgedit/LICENSE`.
