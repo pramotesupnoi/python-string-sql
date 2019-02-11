@@ -25,12 +25,17 @@ The resulting `.vsix` file can be installed via the VSCode GUI.
 
 ## Usage
 
-SQL statements inside a single line of python code work as expected.
+SQL statements inside a single line of python code work as expected
+(although the pattern used to match the initial term of an SQL statement
+is current not very sophisticated).
 Multiline SQL statements require an SQL comment `-- SQL`
 or `/* SQL */` as the same line as the opening triple quotes.
 Alternatively the triple quoted string can be contained within
 parentheses, with the opening parenthesis followed by a
 python comment `# sql` and a newline.
+
+All SQL statements (apart from comments) must be terminated
+by a semi-colon.
 
 Note that this extension does not highlight SQL itself, it merely
 uses whatever highlighter is associated with the `.sql` extension.
@@ -38,4 +43,9 @@ uses whatever highlighter is associated with the `.sql` extension.
 ## Acknowledgements
 
 The project was adpated from [es6-string-html](https://github.com/hanjingboo/es6-string-html).
+Considerable insight into writing 
+the [TextMate grammars](https://macromates.com/manual/en/language_grammars)
+used by VS Code,
+can be found in an [old blog post](https://www.apeth.com/nonblog/stories/textmatebundle.html)
+by Matt Neuburg. 
 
