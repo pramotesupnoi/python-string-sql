@@ -1,6 +1,6 @@
 # Python string SQL
 
-Enable syntax highlighting for SQL inside Python multiline strings.
+Enable syntax highlighting for SQL inside Python multiline strings using VS Code.
 
 ## Installation
 
