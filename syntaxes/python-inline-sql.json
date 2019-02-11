@@ -5,30 +5,7 @@
     "patterns": [
       {
         "contentName": "meta.embedded.inline.sql",
-        "begin": "(\\()\\s*(#\\s*sql.*)",
-        "end": "\\s*(\\))",
-        "beginCaptures": {
-          "1": {
-            "name": "punctuation.parenthesis.begin.python"
-          },
-          "2": {
-            "name": "comment.python"
-          }
-        },
-        "endCaptures": {
-            "1": {
-              "name": "punctuation.parenthesis.end.python"
-            }
-          },
-        "patterns": [
-          {
-            "include": "#sqlblock"
-          }
-        ]
-      },
-      {
-        "contentName": "meta.embedded.inline.sql",
-        "begin": "(?:[bBrRuU]?)('''|\"\"\")\\s*(?=(?:(?:SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH|DROP)\\b.*$)|--\\s*sql.*$|/\\*\\s*sql\\s*.*\\*/\\s*$)",
+        "begin": "(?:[bBrRuU]?)('''|\"\"\")\\s*(?=--\\s*sql.*$|/\\*\\s*sql\\s*.*\\*/\\s*$)",
         "end": "(\\1)",
         "beginCaptures": {
           "1": {
@@ -42,59 +19,10 @@
           },
         "patterns": [
           {
-            "include": "#sql"
+            "include": "source.sql"
           }
         ]
-      },
-      {
-        "contentName": "meta.embedded.inline.sql",
-        "match": "(?:[bBrRuU]?)('''|'|\"\"\"|\")\\s*((?=SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH).*;)\\s*(\\1)",
-        "captures": {
-          "1": {
-            "name": "string.quoted.multi.python"
-          },
-          "2": {
-            "patterns": [
-              {
-                "include": "#sql"
-              }
-            ]
-          },
-          "3": {
-            "name": "string.quoted.multi.python"
-          }
-        }
       }
     ],
-    "repository": {
-      "sql": {
-        "begin": "(?=\\s*(?:(?:SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH)\\b)|--|/\\*)",
-        "end": "(?=;)",
-        "patterns": [
-          {
-            "include": "source.sql"
-          }
-        ]
-      },
-      "sqlblock": {
-        "begin": "('''|\"\"\")$",
-        "end": "^\\s*(\\1)",
-        "beginCaptures": {
-          "1": {
-            "name": "string.quoted.multi.python"
-          }
-        },
-        "endCaptures": {
-            "1": {
-              "name": "string.quoted.multi.python"
-            }
-          },
-        "patterns": [
-          {
-            "include": "source.sql"
-          }
-        ]
-      }
-    },
     "scopeName": "inline.python-sql"
   }
