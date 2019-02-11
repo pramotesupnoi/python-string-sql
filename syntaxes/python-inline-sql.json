@@ -48,7 +48,7 @@
       },
       {
         "contentName": "meta.embedded.inline.sql",
-        "match": "('''|'|\"\"\"|\")\\s*((?=SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH).*;)\\s*(\\1)",
+        "match": "(?:[bBrRuU]?)('''|'|\"\"\"|\")\\s*((?=SELECT|INSERT|UPDATE|DELETE|CREATE|REPLACE|ALTER|WITH).*;)\\s*(\\1)",
         "captures": {
           "1": {
             "name": "string.quoted.multi.python"
