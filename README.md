@@ -1,6 +1,6 @@
 # Python string SQL
 
-Enable syntax highlighting for SQL inside Python strings.
+Enable syntax highlighting for SQL inside Python multiline strings.
 
 ## Installation
 
@@ -25,17 +25,8 @@ The resulting `.vsix` file can be installed via the VSCode GUI.
 
 ## Usage
 
-SQL statements inside a single line of python code work as expected
-(although the pattern used to match the initial term of an SQL statement
-is current not very sophisticated).
 Multiline SQL statements require an SQL comment `-- SQL`
 or `/* SQL */` as the same line as the opening triple quotes.
-Alternatively the triple quoted string can be contained within
-parentheses, with the opening parenthesis followed by a
-python comment `# sql` and a newline.
-
-All SQL statements (apart from comments) must be terminated
-by a semi-colon.
 
 Note that this extension does not highlight SQL itself, it merely
 uses whatever highlighter is associated with the `.sql` extension.
