@@ -3,7 +3,7 @@
     "displayName": "Python String SQL",
     "description": "Highlight SQL in python multiline strings",
     "version": "0.0.1",
-    "publisher": "mwibrow",
+    "publisher": "uogiukas/",
     "engines": {
       "vscode": "^1.19.0"
     },
@@ -12,13 +12,13 @@
       "theme": "light"
     },
     "repository": {
-      "url": "https://github.com/mwibrow/python-string-sql"
+      "url": "https://github.com/uogiukas/python-string-sql"
     },
     "bugs": {
-      "url": "https://github.com/mwibrow/python-string-sql/issues"
+      "url": "https://github.com/uogiukas/python-string-sql/issues"
     },
     "categories": ["Programming Languages"],
-    "keywords": ["python", "sql", "python-string-sql", "html", "template"],
+    "keywords": ["python", "sql", "python-string-sql"],
     "contributes": {
       "languages": [
         {
