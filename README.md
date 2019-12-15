@@ -25,7 +25,7 @@ The resulting `.vsix` file can be installed via the VSCode GUI.
 
 ### Currently:
 SQL hilighting starts after keywords `SELECT`, `INSERT` and `CREATE TABLE` at the start of multi-line string.
-
+![example](images/example_highlight.png)
 ## Acknowledgements
 
 This project was cloned from Mark Wibrow project [python-string-sql](https://github.com/mwibrow/python-string-sql), that was was adpated from [es6-string-html](https://github.com/hanjingboo/es6-string-html).
