@@ -3,7 +3,7 @@
     "displayName": "Python String SQL",
     "description": "Highlight SQL in python multiline strings",
     "version": "0.0.1",
-    "publisher": "uogiukas/",
+    "publisher": "uogiukas",
     "engines": {
       "vscode": "^1.19.0"
     },
