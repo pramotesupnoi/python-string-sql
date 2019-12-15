@@ -5,18 +5,15 @@ This project's aim is to enable syntax highlighting for SQL inside Python multil
 
 ## Installation
 
-As the extension is in development, installation is only
-possible manually.
+As the extension is in development, installation is only possible manually.
 
-Install [node.js](https://nodejs.org/) and then then install the
-[vsce](https://www.npmjs.com/package/vsce) package:
+Install [node.js](https://nodejs.org/) and then then install the [vsce](https://www.npmjs.com/package/vsce) package:
 
 ```
 npm install --global vsce
 ```
 
-Clone the repository and open a terminal at the project root
-and execute the following command:
+Clone the repository and open a terminal at the project root and execute the following command:
 
 ```
 vsce package
@@ -27,23 +24,12 @@ The resulting `.vsix` file can be installed via the VSCode GUI.
 ## Usage
 
 ### Currently:
-Multiline SQL statements require an SQL comment `-- SQL`
-or `/* SQL */` as the same line as the opening triple quotes.
-
-### Target:
-Targit is for extension to automatically understand when SQL syntax is used and start highlighting.
-
-Note that this extension does not highlight SQL itself, it merely
-uses whatever highlighter is associated with the `.sql` extension.
+SQL hilighting starts after keywords `SELECT`, `INSERT` and `CREATE TABLE` at the start of multi-line string.
 
 ## Acknowledgements
 
 This project was cloned from Mark Wibrow project [python-string-sql](https://github.com/mwibrow/python-string-sql), that was was adpated from [es6-string-html](https://github.com/hanjingboo/es6-string-html).
-Considerable insight into writing 
-the [TextMate grammars](https://macromates.com/manual/en/language_grammars)
-used by VS Code,
-can be found in an [old blog post](https://www.apeth.com/nonblog/stories/textmatebundle.html)
-by Matt Neuburg. 
+Considerable insight into writing the [TextMate grammars](https://macromates.com/manual/en/language_grammars) used by VS Code, can be found in an [old blog post](https://www.apeth.com/nonblog/stories/textmatebundle.html) by Matt Neuburg. 
 
 ## Contribution
 
