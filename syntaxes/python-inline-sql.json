@@ -5,7 +5,7 @@
     "patterns": [
       {
         "contentName": "meta.embedded.inline.sql",
-        "begin": "(?:[bBrRuU]?)(\"\"\"|f\"\"\")\\s*(?=SELECT|INSERT|CREATE TABLE)",
+        "begin": "(?i)(?:[bBrRuU]?)(\"\"\"|f\"\"\")\\s*(?=SELECT|INSERT|UPDATE|DELETE|CREATE TABLE)",
         "end": "\"\"\"",
         "beginCaptures": {
           "1": {
