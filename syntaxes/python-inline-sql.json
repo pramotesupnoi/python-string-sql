@@ -7,14 +7,14 @@
     {
       "contentName": "meta.embedded.inline.sql",
       "begin": "(?i)(?:[bBrRuU]?)(\"\"\"|f\"\"\")\\s*(?=SELECT|INSERT|UPDATE|DELETE|CREATE TABLE|CREATE INDEX)",
-      "end": "(\"\"\")",
+      "end": "\\s*(\"\"\")",
       "beginCaptures": {
-        "4": {
+        "0": {
           "name": "string.quoted.multi.python"
         }
       },
       "endCaptures": {
-        "1": {
+        "0": {
           "name": "string.quoted.multi.python"
         }
       },
